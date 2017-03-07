@@ -30,3 +30,20 @@ angular.module('construction',['ngMaterial','ngRoute'])
 .controller('aboutus',['$scope',function($scope){
 
 }]);
+
+
+
+var header = $('header');
+var theWindow = $(window);
+
+$(document).scroll(function() {
+	if(theWindow.scrollTop() >= 20) {
+		if (!header.hasClass('fixed')) {
+			header.addClass('fixed');
+		}
+	} else {
+		if (header.hasClass('fixed')) {
+			header.removeClass('fixed');
+		}
+	}
+});
